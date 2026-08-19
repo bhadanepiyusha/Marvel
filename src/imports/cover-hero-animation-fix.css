@@ -1,0 +1,105 @@
+Modify only the Cover Page hero animation section.
+
+Do NOT redesign layout.
+Do NOT regenerate pages.
+Only fix image aspect ratio and scaling.
+
+1️⃣ Make Cover Section Full Viewport
+
+Set cover section container to:
+
+Width: 100%
+
+Height: 100vh
+
+Position: relative
+
+Overflow: hidden
+
+Ensure it always fills entire screen.
+
+2️⃣ Fix Animated Hero Image Container
+
+For each animated hero image:
+
+Position: absolute
+
+Width: 100%
+
+Height: 100%
+
+Top: 0
+
+Left: 0
+
+Image styling must be:
+
+object-fit: cover
+
+object-position: center
+
+width: 100%
+
+height: 100%
+
+This ensures no stretching and no white space.
+
+3️⃣ Enforce 16:9 Cinematic Ratio Internally
+
+Even though container is full screen:
+
+Maintain visual cinematic framing using:
+
+16:9 internal safe zone
+
+Slight top-bottom crop allowed
+
+No side distortion
+
+If screen is ultra-wide:
+Center the image.
+
+If screen is tall:
+Crop top/bottom, not sides.
+
+4️⃣ Remove Any Fixed Height
+
+Remove:
+
+px-based height
+
+aspect-ratio CSS property
+
+max-height restrictions
+
+Only use 100vh.
+
+5️⃣ Keep Overlay and Animations Same
+
+Do not modify:
+
+Fade timing
+
+Transition duration
+
+Text animation
+
+Button animation
+
+Only fix scaling and image framing.
+
+🔥 If It Still Looks Wrong
+
+Tell me:
+
+Are you viewing on:
+
+Laptop?
+
+1920x1080?
+
+Tablet?
+
+Figma preview window?
+
+Because sometimes Figma preview window itself compresses heig

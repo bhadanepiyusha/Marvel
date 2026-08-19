@@ -1,0 +1,93 @@
+Redesign the hero section by replacing all animated Marvel hero images with a cinematic background video.
+
+Use the uploaded file:
+Marvel Comics Intro.mp4
+
+🎥 VIDEO IMPLEMENTATION REQUIREMENTS
+
+Use the video as a full-width background hero section.
+
+Desktop-first design (1440px).
+
+Video must:
+
+Autoplay
+
+Loop
+
+Be muted
+
+Cover full container (object-fit: cover)
+
+Maintain aspect ratio.
+
+Ensure no stretching or distortion.
+
+Add a dark overlay (40–60% opacity) for text readability.
+
+Keep video optimized for performance.
+
+🖥 RESPONSIVENESS
+
+Desktop (1440px – 12 column grid)
+
+Tablet (768px)
+
+Mobile (375px)
+
+Adjust:
+
+Text size scaling
+
+Vertical spacing
+
+Button positioning
+
+Maintain center alignment
+
+Prevent cropping important video content on smaller screens
+
+If needed:
+
+Use different cropping strategy for mobile (center focal area).
+
+📝 HERO CONTENT OVER VIDEO
+
+Keep:
+
+Main Heading
+Subheading
+Primary CTA button
+Secondary CTA button
+
+Ensure:
+
+Strong contrast
+
+Clean typography
+
+Premium cinematic feel
+
+Clear hierarchy
+
+🎨 STYLE
+
+Dark cinematic theme
+
+Modern
+
+Minimal
+
+Strong focus on video impact
+
+Smooth fade-in text animation
+
+⚡ PERFORMANCE NOTES
+
+Use lazy loading where needed
+
+Optimize video size
+
+Fallback static poster image if video fails
+
+Ensure smooth rendering on laptop
