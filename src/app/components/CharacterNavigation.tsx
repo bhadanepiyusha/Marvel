@@ -56,16 +56,32 @@ export default function CharacterNavigation({ accentColor }: CharacterNavigation
                 onClick={() => navigate(`/character/${character.id}`)}
               >
                 {/* Character Image */}
-                <div className="relative" style={{ aspectRatio: "3/4" }}>
-                  <img 
-                    src={character.imageUrl}
-                    alt={character.name}
-                    className="w-full h-full object-cover"
-                  />
-                  <div 
-                    className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"
-                  />
-                </div>
+<div className="relative" style={{ aspectRatio: "3/4" }}>
+  {/* Character Image */}
+<div className="relative" style={{ aspectRatio: "3/4" }}>
+  <img
+    src={
+      character.id === "hulk"
+        ? "/images/hulk.jpg"
+        : character.id === "doctor-strange"
+        ? "/images/doctor-strange.jpg"
+        : character.id === "captain-america"
+        ? "/images/captain-america.jpg"
+        : character.imageUrl
+    }
+    alt={character.name}
+    className="w-full h-full object-cover"
+  />
+
+  <div 
+    className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"
+  />
+</div>
+
+  <div 
+    className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"
+  />
+</div>
                 
                 {/* Glow Border on Hover */}
                 <motion.div 

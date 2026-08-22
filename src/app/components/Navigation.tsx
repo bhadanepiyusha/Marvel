@@ -11,13 +11,14 @@ export default function Navigation({ accentColor }: NavigationProps) {
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const navItems = [
+   const navItems = [
     { label: "Home", path: "/" },
     { label: "Timeline", path: "/timeline" },
     { label: "Heroes", path: "/heroes" },
     { label: "Movies", path: "/movies" },
+    { label: "Comics", path: "/comics" },
+    { label: "Contact Us", path: "/contact" },
   ];
-
   const isActive = (path: string) => {
     if (path === "/") {
       return location.pathname === "/";

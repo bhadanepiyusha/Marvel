@@ -1,6 +1,8 @@
 import { createBrowserRouter } from "react-router";
+
 import RootLayout from "./components/RootLayout";
 import MovieRedirect from "./components/MovieRedirect";
+
 import LandingPage from "./pages/LandingPage";
 import TimelinePage from "./pages/TimelinePage";
 import HeroesPage from "./pages/HeroesPage";
@@ -9,6 +11,8 @@ import MovieDetailPage from "./pages/MovieDetailPage";
 import CharacterProfile from "./pages/CharacterProfile";
 import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
+import ComicsPage from "./pages/ComicsPage";
+import ContactPage from "./pages/ContactPage";
 
 export const router = createBrowserRouter([
   {
@@ -32,6 +36,14 @@ export const router = createBrowserRouter([
         Component: MoviesPage,
       },
       {
+        path: "comics",
+        Component: ComicsPage,
+      },
+      {
+  path: "contact",
+  Component: ContactPage,
+},
+      {
         path: "movies/:id",
         Component: MovieRedirect,
       },
@@ -53,4 +65,4 @@ export const router = createBrowserRouter([
     path: "/signup",
     Component: SignUpPage,
   },
-]);
+]);                                           

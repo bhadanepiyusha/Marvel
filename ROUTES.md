@@ -67,3 +67,7 @@ Added a redirect route from `/movies/:id` to `/movie/:id` to handle any legacy l
 ✅ Using `react-router` (not react-router-dom)
 ✅ Legacy `/movies/:id` route added for backward compatibility
 ✅ No 404 errors
+{
+  path: "comics",
+  Component: ComicsPage,
+},

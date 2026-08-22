@@ -49,7 +49,7 @@ export default function MovieDetailPage() {
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#0A0A0F" }}>
       {/* Hero Banner with Backdrop */}
-      <section className="relative h-[80vh] overflow-hidden">
+<section className="relative h-[80vh] overflow-hidden pt-20">  
         {/* Backdrop Image */}
         <div className="absolute inset-0">
           <img 
@@ -67,22 +67,23 @@ export default function MovieDetailPage() {
         </div>
         
         {/* Movie Info Overlay */}
-        <div className="absolute bottom-0 left-0 right-0 p-8 md:p-16 z-10">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-end">
+<div className="absolute bottom-8 left-0 right-0 p-8 md:p-16 z-10">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-end">
             {/* Poster */}
-            <motion.div 
-              className="relative rounded-xl overflow-hidden"
-              style={{ aspectRatio: "2/3" }}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <img 
-                src={movie.posterUrl}
-                alt={movie.title}
-                className="w-full h-full object-cover"
-              />
-            </motion.div>
+           {/* Poster */}
+<motion.div 
+  className="relative rounded-xl overflow-hidden mt-4 top-36"
+  style={{ aspectRatio: "2/3" }}
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+>
+  <img 
+    src={movie.posterUrl}
+    alt={movie.title}
+    className="w-full h-full object-contain"
+  />
+</motion.div>
             
             {/* Info */}
             <div className="md:col-span-2">
@@ -192,10 +193,10 @@ export default function MovieDetailPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
                 onClick={() => {
-                  if (movie.id === "captain-marvel") {
-                    window.open("https://youtu.be/Z1BCujX3pw8?si=nehj4Eny0QxpZOp7", "_blank");
-                  }
-                }}
+  if (movie.trailerUrl) {
+    window.open(movie.trailerUrl, "_blank");
+  }
+}}
               >
                 <Play size={24} fill="#FFFFFF" />
                 Watch Trailer

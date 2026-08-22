@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import HeroSection from "../components/HeroSection";
-import CharacterNavigation from "../components/CharacterNavigation";
 import TimelineSection from "../components/TimelineSection";
 import MultiverseSwitcher from "../components/MultiverseSwitcher";
 import MovieShowcase from "../components/MovieShowcase";
@@ -28,10 +27,7 @@ export default function Home() {
           gradientFrom={currentTheme.gradientFrom}
         />
         
-        <CharacterNavigation 
-          accentColor={currentTheme.accentColor}
-        />
-        
+           
         <TimelineSection 
           accentColor={currentTheme.accentColor}
         />

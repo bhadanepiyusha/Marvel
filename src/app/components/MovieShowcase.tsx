@@ -8,8 +8,11 @@ interface MovieShowcaseProps {
 
 export default function MovieShowcase({ accentColor }: MovieShowcaseProps) {
   // Featured movie (first one)
-  const featuredMovie = movies[0];
-  const relatedMovies = movies.slice(1);
+ const featuredMovie = movies[0];
+const relatedMovies = movies.slice(1);
+
+console.log("FEATURED MOVIE:", featuredMovie);
+console.log("TRAILER URL:", featuredMovie.trailerUrl);
 
   return (
     <section className="py-24 px-8" style={{ backgroundColor: "#0A0A0F" }}>
@@ -47,7 +50,7 @@ export default function MovieShowcase({ accentColor }: MovieShowcaseProps) {
             transition={{ duration: 0.3 }}
           >
             <img 
-              src={}
+              src={featuredMovie.posterUrl}
               alt={featuredMovie.title}
               className="w-full h-full object-cover"
             />
@@ -57,6 +60,7 @@ export default function MovieShowcase({ accentColor }: MovieShowcaseProps) {
               <motion.div
                 initial={{ scale: 0.8 }}
                 whileHover={{ scale: 1 }}
+                 onClick={() => window.open(featuredMovie.trailerUrl, "_blank")}
                 className="w-20 h-20 rounded-full flex items-center justify-center cursor-pointer"
                 style={{ backgroundColor: accentColor }}
               >
@@ -124,22 +128,26 @@ export default function MovieShowcase({ accentColor }: MovieShowcaseProps) {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <motion.button
-                className="px-8 py-4 rounded-md flex items-center justify-center gap-3 transition-all duration-300 flex-1"
-                style={{
-                  backgroundColor: accentColor,
-                  color: "#FFFFFF",
-                  fontWeight: 600,
-                }}
-                whileHover={{ 
-                  scale: 1.05,
-                  boxShadow: `0 0 30px ${accentColor}60`,
-                }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Play size={20} fill="#FFFFFF" />
-                Watch Trailer
-              </motion.button>
+             <motion.button
+  className="px-8 py-4 rounded-md flex items-center justify-center gap-3 transition-all duration-300 flex-1"
+  style={{
+    backgroundColor: accentColor,
+    color: "#FFFFFF",
+    fontWeight: 600,
+  }}
+  onClick={() => {
+    console.log("TRAILER CLICKED:", featuredMovie.trailerUrl);
+    window.open(featuredMovie.trailerUrl, "_blank");
+  }}
+  whileHover={{ 
+    scale: 1.05,
+    boxShadow: `0 0 30px ${accentColor}60`,
+  }}
+  whileTap={{ scale: 0.95 }}
+>
+  <Play size={20} fill="#FFFFFF" />
+  Watch Trailer
+</motion.button>
               
               <motion.button
                 className="px-8 py-4 rounded-md transition-all duration-300 border-2 flex-1"
@@ -223,10 +231,14 @@ export default function MovieShowcase({ accentColor }: MovieShowcaseProps) {
                   
                   {/* Play Button Overlay */}
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div 
-                      className="w-16 h-16 rounded-full flex items-center justify-center"
-                      style={{ backgroundColor: `${accentColor}90` }}
-                    >
+                    <div
+  className="w-16 h-16 rounded-full flex items-center justify-center"
+  style={{ backgroundColor: `${accentColor}90` }}
+onClick={() => {
+   if (movie.trailerUrl) {
+  window.location.href = "https://youtu.be/TcMBFSGVi1c";
+   }
+}}>
                       <Play size={24} fill="#FFFFFF" color="#FFFFFF" />
                     </div>
                   </div>
