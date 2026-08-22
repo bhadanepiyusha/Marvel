@@ -541,31 +541,6 @@ export default function LandingPage() {
           </div>
         </div>
 
-        {/* Spinning "NEW ERA" Badge - Top Right */}
-        <motion.div
-          className="absolute top-8 right-8 w-24 h-24 flex items-center justify-center"
-          animate={{ rotate: 360 }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-        >
-          <div 
-            className="w-full h-full rounded-full flex items-center justify-center border-4"
-            style={{
-              backgroundColor: "#E5181B",
-              borderColor: "#F5C518",
-            }}
-          >
-            <Star size={32} color="#F5C518" fill="#F5C518" />
-          </div>
-          <div 
-            className="absolute text-xs font-bold tracking-wider"
-            style={{
-              color: "#ffffff",
-              animation: "none",
-            }}
-          >
-            NEW
-          </div>
-        </motion.div>
 
         {/* Scroll Indicator - Bottom Left */}
         <motion.div

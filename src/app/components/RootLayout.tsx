@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Outlet, useLocation } from "react-router";
 import Navigation from "./Navigation";
 import { universeThemes, Universe } from "../data/marvelData";
@@ -6,6 +6,9 @@ import { universeThemes, Universe } from "../data/marvelData";
 export default function RootLayout() {
   const [currentUniverse, setCurrentUniverse] = useState<Universe>("earth-616");
   const location = useLocation();
+  useEffect(() => {
+  window.scrollTo(0, 0);
+}, [location.pathname]);
   
   const theme = universeThemes.find(t => t.id === currentUniverse) || universeThemes[0];
 
